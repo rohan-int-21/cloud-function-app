@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy
+  - cloud-function-for-app
+  - --region=asia-south1
+  - --source=.
+  - --trigger-http
+  - --runtime=nodejs20
+  - --entry-point=cloudFunctionHandler
+
+options:
+  logging: CLOUD_LOGGING_ONLY
